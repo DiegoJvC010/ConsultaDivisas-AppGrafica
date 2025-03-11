@@ -267,11 +267,14 @@ fun ExchangeRateChartScreen(viewModel: ExchangeRateViewModel = viewModel()) {
                         //Se crea un conjunto de datos (LineDataSet) para el gráfico
                         val dataSet = LineDataSet(chartEntries,
                             "Tipo de cambio 1 MXN a $selectedCurrency").apply {
-                            lineWidth = 2f //Grosor de la línea
+                            lineWidth = 3f //Grosor de la línea
                             setDrawCircles(true) //Habilita los puntos en la línea
+                            setCircleRadius(4f) //Aumenta el tamaño de las bolitas
+                            setCircleHoleRadius(3f)//Ajusta el hueco del centro
                             setDrawValues(showValues) //Para mostrar los valores sobre los puntos
                             color = Color.CYAN //Color de la línea
                             setCircleColor(Color.CYAN) //Color de los puntos
+                            setValueTextSize(7f) //Tamaño de los valores
                         }
 
                         //Asigna los datos al gráfico
